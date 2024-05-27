@@ -12,5 +12,13 @@
 <form action = "/delete/{{user_id}}" method = "POST">
 <button >Delete</button></form>
 
+<ul> POSTS
+{% for post in posts %}
+<li><a href ="/users/posts/{{post.id}}">{{post.title}}</a></li>
+{% endfor %}
+</ul>
+<form action = "/users/posts/{{user_id}}/create" method = "GET">
+    <button>Add Post</button>
+</form>
 {% endblock %}
 
