@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Create or Delete{% endblock %}
+
+{% block content %}
+
+{% if form == 'create' %}
+<h2>Create a user</h2>
+<form action = "/" method = "POST">
+    First Name<input name = "first_name" placeholder = "First Name" type = text>
+    Last Name<input name = "last_name" placeholder = "Last Name" type = text>
+    Photo Url<input name = "photo_url" placeholder = "Photo" type = url>
+    <button>Submit</button>
+</form>
+{% else %}
+<h2>Update a User</h2>
+
+<form action = "/update/{{user_id}}" method = "POST">
+    First Name<input name = "first_name" placeholder = "First Name" type = text>
+    Last Name<input name = "last_name" placeholder = "Last Name" type = text>
+    Photo Url<input name = "photo_url" placeholder = "Photo" type = url>
+    <button>Update</button>
+</form>
+{% endif %}
+{% endblock %}
